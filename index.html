@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>万事通</title>
+    <style>
+        body{
+            background: linear-gradient(100deg,#ffb6c1 , #9795f0);
+        }
+        .fl{
+            width:20%;
+            /*border:2px solid #de48a1;*/
+            float:left;
+            border-right: 2px solid #ffb5f0;
+            border-radius: 20px;
+        }
+        .fr{
+            width:79%;
+            /*border:2px solid #de48a1;*/
+            float: right;
+        }
+        .clear_fix{
+            height: 0;
+            clear: both;
+            line-height: 0;
+            font-size: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="fr" >
+    <center>
+        <br>
+        <br>
+        <h2>万能搜索</h2>
+        <input id="wd" style="font-size: 20px;border-radius: 6px;" size="38" placeholder=" 🔍"/><br>
+        <input type="button" value="百度一下" onclick="jump_baidu()" style="background-color: dodgerblue; font-size: 16px"/>
+        <input type="button" value="CSDN搜索" onclick="jump_CSDN()" style="background-color: orange; font-size: 16px"/>
+        <input type="button" value="哔哩哔哩" onclick="jump_bilibili()" style="background-color: coral; font-size: 16px"/>
+        <hr>
+        <h2>翻译</h2>
+        <input id="en_ch" style="font-size: 20px" size="40" placeholder=" 🔍" /><br>
+        <input type="button" value="英译汉" onclick="jump_fanyi_en_ch()" style="font-size: 16px"/>
+        <input type="button" value="汉译英" onclick="jump_fanyi_ch_en()" style="font-size: 16px"/>
+        <hr>
+    </center>
+</div>
+<div class="fl">
+<!--    <iframe src="extraPage.html" width="300" height="700"/>-->
+    <center>
+        <h2>常用网址</h2>
+        <a href="playOrStudy.html" style="font-size: 20px">POS</a><br>
+        <a href="https://cli.im/" style="font-size: 20px;">草料二维码</a><br>
+        <a href="https://uutool.cn/text2voice/" style="font-size: 20px">文字转语音</a><br>
+        <a href="https://www.btnull.org/" style="font-size: 20px;">BTnull无名小站</a><br>
+        <a href="https://www.cpsctest.com/" style="font-size: 20px;">茶杯狐</a><br>
+        <a href="http://cet-bm.neea.edu.cn/" style="font-size: 20px;">四六级报名网</a><br>
+        <a href="https://www.hippopx.com/" style="font-size: 20px;">图库</a><br>
+        <a href="https://www.51voa.com/VOA_Special_English/father-and-son-aim-to-stop-ice-melt-in-one-of-earth-s-coldest-places-87951.html" style="font-size: 20px;">VOA Special</a><br>
+        <a href="https://changjiang.yuketang.cn/v2/web/index" style="font-size: 20px;">雨课堂</a><br>
+        <a href="https://s.weibo.com/top/summary" style="font-size: 20px;">微博</a><br>
+        <a href="https://www.bilibili.com/account/history?spm_id_from=333.1007.0.0" style="font-size: 20px;" >bilibili历史记录</a><br>
+        <a href="https://www.aliyundrive.com/drive/folder/6270e8e7a278b2dee34141a08ea0e5197077873d" style="font-size: 20px;">云盘王道课程</a><br>
+        <a href="" style="font-size: 20px;"></a><br>
+        <a href="" style="font-size: 20px;"></a><br>
+    </center>
+</div>
+<div class="clear_fix"></div>
+
+</body>
+<script>
+    function jump_baidu(){
+        var wd = document.getElementById('wd');
+        var wd_value = wd.value;
+        if(wd_value=="")
+            alert("请输入内容");
+        else{
+            var t1 = "https://www.baidu.com/s?wd="+wd_value;
+            window.location.href=t1;
+        }
+
+    }
+    function jump_CSDN(){
+        var wd = document.getElementById('wd').value;
+        var target = "https://so.csdn.net/so/search?spm=1000.2115.3001.7499&q="+wd;
+        if(wd=="")
+            alert("请输入内容");
+        else{
+            window.location.href=target;
+        }
+    }
+    function jump_bilibili() {
+        var wd = document.getElementById('wd').value;
+        var target = "https://search.bilibili.com/all?keyword="+wd;
+        if(wd=="")
+            alert("请输入内容");
+        else{
+            window.location.href=target;
+        }
+    }
+    function jump_fanyi_en_ch(){
+        var wd = document.getElementById('en_ch').value;
+        var target = "https://fanyi.baidu.com/?aldtype=16047#en/zh/"+wd;
+        if(wd=="")
+            alert("请输入内容");
+        else
+            window.location.href = target;
+    }
+    function jump_fanyi_ch_en(){
+        var wd = document.getElementById('en_ch').value;
+        var target = "https://fanyi.baidu.com/?aldtype=16047#zh/en/"+wd;
+        if(wd=="")
+            alert("请输入内容");
+        else
+            window.location.href = target;
+    }
+</script>
+</html>
